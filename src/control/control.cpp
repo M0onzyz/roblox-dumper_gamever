@@ -133,6 +133,28 @@ namespace control {
         return execute_command("set_ui_gradient_color", {{"r", r}, {"g", g}, {"b", b}});
     }
 
+    bool Controller::set_frame_background_color(float r, float g, float b) {
+        return execute_command("set_frame_background_color", {{"r", r}, {"g", g}, {"b", b}});
+    }
+
+    bool Controller::set_frame_border_color(float r, float g, float b) {
+        return execute_command("set_frame_border_color", {{"r", r}, {"g", g}, {"b", b}});
+    }
+
+    bool Controller::set_frame_position(float x_scale, int x_offset, float y_scale, int y_offset) {
+        return execute_command("set_frame_position", {{"x_scale", x_scale},
+                                                      {"x_offset", x_offset},
+                                                      {"y_scale", y_scale},
+                                                      {"y_offset", y_offset}});
+    }
+
+    bool Controller::set_frame_size(float x_scale, int x_offset, float y_scale, int y_offset) {
+        return execute_command("set_frame_size", {{"x_scale", x_scale},
+                                                  {"x_offset", x_offset},
+                                                  {"y_scale", y_scale},
+                                                  {"y_offset", y_offset}});
+    }
+
     void Controller::set_api_url(const std::string& url) { this->api_url = url; }
 
     bool Controller::clear_queue() {

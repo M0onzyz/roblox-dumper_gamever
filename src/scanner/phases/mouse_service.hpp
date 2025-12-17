@@ -105,7 +105,7 @@ namespace scanner::phases {
             {200.0f, 400.0f},
         };
 
-        constexpr int SLEEP_MS = 700;
+        constexpr int SLEEP_MS = 1100;
 
         move_mouse_in_window(roblox_window, static_cast<int>(mouse_positions[0].x),
                              static_cast<int>(mouse_positions[0].y));

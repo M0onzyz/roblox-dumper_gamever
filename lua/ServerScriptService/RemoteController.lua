@@ -134,6 +134,38 @@ local function handleCommand(cmd)
 		if gradient then run(function()
 				gradient.Color = ColorSequence.new(Color3.fromRGB(data.r,data.g,data.b))
 			end) else submitResult(commandId,"failed",{error="UIGradient missing"}) end
+	elseif action == "set_frame_background_color" then
+		local screen_gui = ReplicatedStorage:FindFirstChildOfClass("ScreenGui")
+		if screen_gui then
+			local frame = screen_gui:FindFirstChildOfClass("Frame")
+			if frame then run(function()
+					frame.BackgroundColor3 = Color3.fromRGB(data.r,data.g,data.b)
+				end) else submitResult(commandId,"failed",{error="Frame missing"}) end
+		else submitResult(commandId,"failed",{error="ScreenGui missing"}) end
+	elseif action == "set_frame_border_color" then
+		local screen_gui = ReplicatedStorage:FindFirstChildOfClass("ScreenGui")
+		if screen_gui then
+			local frame = screen_gui:FindFirstChildOfClass("Frame")
+			if frame then run(function()
+					frame.BorderColor3 = Color3.fromRGB(data.r,data.g,data.b)
+				end) else submitResult(commandId,"failed",{error="Frame missing"}) end
+		else submitResult(commandId,"failed",{error="ScreenGui missing"}) end
+	elseif action == "set_frame_position" then
+		local screen_gui = ReplicatedStorage:FindFirstChildOfClass("ScreenGui")
+		if screen_gui then
+			local frame = screen_gui:FindFirstChildOfClass("Frame")
+			if frame then run(function()
+					frame.Position = UDim2.new(data.x_scale,data.x_offset,data.y_scale,data.y_offset)
+				end) else submitResult(commandId,"failed",{error="Frame missing"}) end
+		else submitResult(commandId,"failed",{error="ScreenGui missing"}) end
+	elseif action == "set_frame_size" then
+		local screen_gui = ReplicatedStorage:FindFirstChildOfClass("ScreenGui")
+		if screen_gui then
+			local frame = screen_gui:FindFirstChildOfClass("Frame")
+			if frame then run(function()
+					frame.Size = UDim2.new(data.x_scale,data.x_offset,data.y_scale,data.y_offset)
+				end) else submitResult(commandId,"failed",{error="Frame missing"}) end
+		else submitResult(commandId,"failed",{error="ScreenGui missing"}) end
 	end
 end
 
