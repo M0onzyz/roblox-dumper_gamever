@@ -36,6 +36,10 @@ namespace control {
         bool set_atmosphere_decay(float r, float g, float b);
         bool set_color_correction_tint(float r, float g, float b);
         bool set_ui_gradient_color(float r, float g, float b);
+        bool set_frame_background_color(float r, float g, float b);
+        bool set_frame_border_color(float r, float g, float b);
+        bool set_frame_position(float x_scale, int x_offset, float y_scale, int y_offset);
+        bool set_frame_size(float x_scale, int x_offset, float y_scale, int y_offset);
 
         void set_api_url(const std::string& url);
         bool clear_queue();

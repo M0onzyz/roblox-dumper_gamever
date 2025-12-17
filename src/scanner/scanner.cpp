@@ -5,6 +5,7 @@
 #include "phases/color_correction_effect.hpp"
 #include "phases/data_model.hpp"
 #include "phases/depth_of_field_effect.hpp"
+#include "phases/gui_object.hpp"
 #include "phases/humanoid.hpp"
 #include "phases/instance.hpp"
 #include "phases/lighting.hpp"
@@ -47,8 +48,9 @@ namespace scanner {
         registry.register_phase("DepthOfFieldEffect", phases::depth_of_field_effect);
         registry.register_phase("MouseService", phases::mouse_service);
         registry.register_phase("UIGradient", phases::ui_gradient);
+        registry.register_phase("GuiObject", phases::gui_object);
 
-        // // this phase also gets view matrix for VisualEngine
+        // this phase also gets view matrix for VisualEngine
         registry.register_phase("Camera", phases::camera);
 
         return registry.run_all(ctx);
