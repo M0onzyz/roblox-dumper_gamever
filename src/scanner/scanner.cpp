@@ -15,6 +15,7 @@
 #include "phases/sky.hpp"
 #include "phases/special_mesh.hpp"
 #include "phases/sun_rays_effect.hpp"
+#include "phases/ui_gradient.hpp"
 #include "phases/value.hpp"
 #include "phases/visual_engine.hpp"
 #include "phases/workspace.hpp"
@@ -43,6 +44,7 @@ namespace scanner {
         registry.register_phase("ColorCorrectionEffect", phases::color_correction_effect);
         registry.register_phase("DepthOfFieldEffect", phases::depth_of_field_effect);
         registry.register_phase("MouseService", phases::mouse_service);
+        registry.register_phase("UIGradient", phases::ui_gradient);
 
         // this phase also gets view matrix for VisualEngine
         registry.register_phase("Camera", phases::camera);
