@@ -1,8 +1,8 @@
 //================================================================
 // Dumped By Jonah's Roblox Dumper | Discord: jonahw
 // Github Link: https://github.com/nopjo/roblox-dumper
-// Dumped at: 2025-12-18 12:57:18
-// Roblox Version: version-eaebe135b3ec446b
+// Dumped at: 2025-12-18 19:02:53
+// Roblox Version: version-5b077c09380f4fe6
 // Total offsets dumped: 143
 //================================================================
 
@@ -12,7 +12,7 @@
 namespace offsets {
     namespace VisualEngine {
         inline constexpr uintptr_t FakeToRealDataModel = 0x1C0;
-        inline constexpr uintptr_t Pointer = 0x7A684F0;
+        inline constexpr uintptr_t Pointer = 0x7A69470;
         inline constexpr uintptr_t RenderView = 0x800;
         inline constexpr uintptr_t ToFakeDataModel = 0x700;
         inline constexpr uintptr_t ViewMatrix = 0x180;
