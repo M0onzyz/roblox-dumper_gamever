@@ -63,7 +63,7 @@ namespace scanner {
         registry.register_phase("Terrain", phases::terrain);
 
         // this phase also gets view matrix for VisualEngine
-        // registry.register_phase("Camera", phases::camera);
+        registry.register_phase("Camera", phases::camera);
 
         return registry.run_all(ctx);
     }

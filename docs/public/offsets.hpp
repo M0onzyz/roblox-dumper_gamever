@@ -2,9 +2,9 @@
 // Dumped By Jonah's Roblox Dumper | Discord: jonahw
 // Github Link: https://github.com/nopjo/roblox-dumper
 // Contributors: @4hd8, @fulore 
-// Dumped at: 2025-12-26 19:52:48
+// Dumped at: 2025-12-26 20:39:18
 // Roblox Version: version-5b077c09380f4fe6
-// Total offsets dumped: 188
+// Total offsets dumped: 192
 //================================================================
 
 #pragma once
@@ -16,6 +16,7 @@ namespace offsets {
         inline constexpr uintptr_t Pointer = 0x7A69470;
         inline constexpr uintptr_t RenderView = 0x800;
         inline constexpr uintptr_t ToFakeDataModel = 0x700;
+        inline constexpr uintptr_t ViewMatrix = 0x180;
         inline constexpr uintptr_t WindowDimensions = 0x720;
     }
 
@@ -296,5 +297,11 @@ namespace offsets {
         inline constexpr uintptr_t Slate = 0x3;
         inline constexpr uintptr_t Snow = 0xA;
         inline constexpr uintptr_t WoodPlanks = 0x7;
+    }
+
+    namespace Camera {
+        inline constexpr uintptr_t FieldOfView = 0x160;
+        inline constexpr uintptr_t Position = 0x11C;
+        inline constexpr uintptr_t Rotation = 0xF8;
     }
 }
