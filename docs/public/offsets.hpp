@@ -1,9 +1,9 @@
 //================================================================
 // Dumped By Jonah's Roblox Dumper | Discord: jonahw
 // Github Link: https://github.com/nopjo/roblox-dumper
-// Contributors: @4hd8, @fulore 
-// Dumped at: 2026-01-27 11:24:11
-// Roblox Version: version-f8734e043e1e40a2
+// Contributors: @4hd8, @fulore
+// Dumped at: 2026-01-23 12:32:21
+// Roblox Version: version-8b8c34790f814a73
 // Total offsets dumped: 226
 //================================================================
 
@@ -18,7 +18,7 @@ namespace offsets {
         inline constexpr uintptr_t ToFakeDataModel = 0x700;
         inline constexpr uintptr_t ViewMatrix = 0x180;
         inline constexpr uintptr_t WindowDimensions = 0x720;
-    }
+    } // namespace VisualEngine
 
     namespace RenderView {
         inline constexpr uintptr_t InvalidateLighting = 0x148;
@@ -35,7 +35,7 @@ namespace offsets {
         inline constexpr uintptr_t ServerIP = 0x5E0;
         inline constexpr uintptr_t UserInputService = 0x3A0;
         inline constexpr uintptr_t Workspace = 0x178;
-    }
+    } // namespace DataModel
 
     namespace Instance {
         inline constexpr uintptr_t AttributeContainer = 0x48;
@@ -48,12 +48,12 @@ namespace offsets {
         inline constexpr uintptr_t ClassName = 0x8;
         inline constexpr uintptr_t Name = 0xB0;
         inline constexpr uintptr_t Parent = 0x68;
-    }
+    } // namespace Instance
 
     namespace Workspace {
         inline constexpr uintptr_t Camera = 0x460;
         inline constexpr uintptr_t Gravity = 0x9B8;
-    }
+    } // namespace Workspace
 
     namespace Players {
         inline constexpr uintptr_t LocalPlayer = 0x130;
@@ -64,7 +64,7 @@ namespace offsets {
         inline constexpr uintptr_t DisplayName = 0x130;
         inline constexpr uintptr_t Team = 0x280;
         inline constexpr uintptr_t UserId = 0x2A8;
-    }
+    } // namespace Player
 
     namespace Team {
         inline constexpr uintptr_t Color = 0xD0;
@@ -79,7 +79,7 @@ namespace offsets {
         inline constexpr uintptr_t Reflectance = 0xEC;
         inline constexpr uintptr_t Shape = 0x1B1;
         inline constexpr uintptr_t Transparency = 0xF0;
-    }
+    } // namespace BasePart
 
     namespace Primitive {
         inline constexpr uintptr_t AssemblyAngularVelocity = 0xFC;
@@ -89,13 +89,13 @@ namespace offsets {
         inline constexpr uintptr_t PrimitiveFlags = 0x1AE;
         inline constexpr uintptr_t Rotation = 0xC0;
         inline constexpr uintptr_t Size = 0x1B0;
-    }
+    } // namespace Primitive
 
     namespace PrimitiveFlags {
         inline constexpr uintptr_t Anchored = 0x2;
         inline constexpr uintptr_t CanCollide = 0x8;
         inline constexpr uintptr_t CanTouch = 0x10;
-    }
+    } // namespace PrimitiveFlags
 
     namespace Humanoid {
         inline constexpr uintptr_t AutoJumpEnabled = 0x1D8;
@@ -119,12 +119,12 @@ namespace offsets {
         inline constexpr uintptr_t WalkSpeed = 0x1D4;
         inline constexpr uintptr_t WalkSpeedCheck = 0x3C0;
         inline constexpr uintptr_t WalkToPoint = 0x17C;
-    }
+    } // namespace Humanoid
 
     namespace Mesh {
         inline constexpr uintptr_t MeshId = 0x2E8;
         inline constexpr uintptr_t TextureId = 0x318;
-    }
+    } // namespace Mesh
 
     namespace Value {
         inline constexpr uintptr_t Value = 0xD0;
@@ -133,7 +133,7 @@ namespace offsets {
     namespace SpecialMesh {
         inline constexpr uintptr_t MeshId = 0x108;
         inline constexpr uintptr_t Scale = 0xDC;
-    }
+    } // namespace SpecialMesh
 
     namespace Lighting {
         inline constexpr uintptr_t Ambient = 0xD8;
@@ -146,7 +146,7 @@ namespace offsets {
         inline constexpr uintptr_t EnvironmentSpecularScale = 0x128;
         inline constexpr uintptr_t OutdoorAmbient = 0x108;
         inline constexpr uintptr_t Sky = 0x1D8;
-    }
+    } // namespace Lighting
 
     namespace Sky {
         inline constexpr uintptr_t MoonAngularSize = 0x25C;
@@ -161,7 +161,7 @@ namespace offsets {
         inline constexpr uintptr_t StarCount = 0x260;
         inline constexpr uintptr_t SunAngularSize = 0x264;
         inline constexpr uintptr_t SunTextureId = 0x230;
-    }
+    } // namespace Sky
 
     namespace Atmosphere {
         inline constexpr uintptr_t Color = 0xD0;
@@ -170,44 +170,44 @@ namespace offsets {
         inline constexpr uintptr_t Glare = 0xEC;
         inline constexpr uintptr_t Haze = 0xF0;
         inline constexpr uintptr_t Offset = 0xF4;
-    }
+    } // namespace Atmosphere
 
     namespace BloomEffect {
         inline constexpr uintptr_t Intensity = 0xD0;
         inline constexpr uintptr_t Size = 0xD4;
         inline constexpr uintptr_t Threshold = 0xD8;
-    }
+    } // namespace BloomEffect
 
     namespace SunRaysEffect {
         inline constexpr uintptr_t Intensity = 0xD0;
         inline constexpr uintptr_t Spread = 0xD0;
-    }
+    } // namespace SunRaysEffect
 
     namespace ColorCorrectionEffect {
         inline constexpr uintptr_t Brightness = 0xDC;
         inline constexpr uintptr_t Contrast = 0xE0;
         inline constexpr uintptr_t Saturation = 0xE4;
         inline constexpr uintptr_t TintColor = 0xD0;
-    }
+    } // namespace ColorCorrectionEffect
 
     namespace DepthOfFieldEffect {
         inline constexpr uintptr_t Density = 0xD0;
         inline constexpr uintptr_t FocusDistance = 0xD4;
         inline constexpr uintptr_t InFocusRadius = 0xD8;
         inline constexpr uintptr_t NearIntensity = 0xDC;
-    }
+    } // namespace DepthOfFieldEffect
 
     namespace MouseService {
         inline constexpr uintptr_t InputObject = 0x110;
         inline constexpr uintptr_t Position = 0xEC;
-    }
+    } // namespace MouseService
 
     namespace UIGradient {
         inline constexpr uintptr_t Color = 0x134;
         inline constexpr uintptr_t Offset = 0x158;
         inline constexpr uintptr_t Rotation = 0x160;
         inline constexpr uintptr_t Transparency = 0xF4;
-    }
+    } // namespace UIGradient
 
     namespace GuiObject {
         inline constexpr uintptr_t AbsolutePositionX = 0x110;
@@ -225,7 +225,7 @@ namespace offsets {
         inline constexpr uintptr_t Size = 0x548;
         inline constexpr uintptr_t Visible = 0x5C1;
         inline constexpr uintptr_t ZIndex = 0x5B8;
-    }
+    } // namespace GuiObject
 
     namespace TextLabel {
         inline constexpr uintptr_t ContentText = 0xAC8;
@@ -238,7 +238,7 @@ namespace offsets {
         inline constexpr uintptr_t TextStrokeColor3 = 0xEE4;
         inline constexpr uintptr_t TextStrokeTransparency = 0xF08;
         inline constexpr uintptr_t TextTransparency = 0xF0C;
-    }
+    } // namespace TextLabel
 
     namespace TextButton {
         inline constexpr uintptr_t ContentText = 0xD48;
@@ -249,7 +249,7 @@ namespace offsets {
         inline constexpr uintptr_t TextSize = 0xF84;
         inline constexpr uintptr_t TextStrokeColor3 = 0x1164;
         inline constexpr uintptr_t TextTransparency = 0x118C;
-    }
+    } // namespace TextButton
 
     namespace TextBox {
         inline constexpr uintptr_t ContentText = 0xAC0;
@@ -260,7 +260,7 @@ namespace offsets {
         inline constexpr uintptr_t TextSize = 0xCFC;
         inline constexpr uintptr_t TextStrokeColor3 = 0xF08;
         inline constexpr uintptr_t TextTransparency = 0xF40;
-    }
+    } // namespace TextBox
 
     namespace Tool {
         inline constexpr uintptr_t CanBeDropped = 0x4A0;
@@ -273,7 +273,7 @@ namespace offsets {
         inline constexpr uintptr_t ManualActivationOnly = 0x4A2;
         inline constexpr uintptr_t RequiresHandle = 0x4A3;
         inline constexpr uintptr_t ToolTip = 0x450;
-    }
+    } // namespace Tool
 
     namespace Highlight {
         inline constexpr uintptr_t DepthMode = 0xF8;
@@ -281,7 +281,7 @@ namespace offsets {
         inline constexpr uintptr_t FillTransparency = 0xFC;
         inline constexpr uintptr_t OutlineColor = 0xEC;
         inline constexpr uintptr_t OutlineTransparency = 0xF0;
-    }
+    } // namespace Highlight
 
     namespace ProximityPrompt {
         inline constexpr uintptr_t ActionText = 0xD0;
@@ -291,22 +291,22 @@ namespace offsets {
         inline constexpr uintptr_t MaxActivationDistance = 0x148;
         inline constexpr uintptr_t ObjectText = 0xF0;
         inline constexpr uintptr_t RequiresLineOfSight = 0x157;
-    }
+    } // namespace ProximityPrompt
 
     namespace ByteCode {
         inline constexpr uintptr_t Pointer = 0x10;
         inline constexpr uintptr_t Size = 0x20;
-    }
+    } // namespace ByteCode
 
     namespace ModuleScript {
         inline constexpr uintptr_t Bytecode = 0x150;
         inline constexpr uintptr_t Hash = 0x160;
-    }
+    } // namespace ModuleScript
 
     namespace LocalScript {
         inline constexpr uintptr_t Bytecode = 0x1A8;
         inline constexpr uintptr_t Hash = 0x1B8;
-    }
+    } // namespace LocalScript
 
     namespace Terrain {
         inline constexpr uintptr_t GrassLength = 0x1F8;
@@ -316,7 +316,7 @@ namespace offsets {
         inline constexpr uintptr_t WaterTransparency = 0x204;
         inline constexpr uintptr_t WaterWaveSize = 0x208;
         inline constexpr uintptr_t WaterWaveSpeed = 0x20C;
-    }
+    } // namespace Terrain
 
     namespace MaterialColors {
         inline constexpr uintptr_t Asphalt = 0x10;
@@ -340,11 +340,11 @@ namespace offsets {
         inline constexpr uintptr_t Slate = 0x3;
         inline constexpr uintptr_t Snow = 0xA;
         inline constexpr uintptr_t WoodPlanks = 0x7;
-    }
+    } // namespace MaterialColors
 
     namespace Camera {
         inline constexpr uintptr_t FieldOfView = 0x160;
         inline constexpr uintptr_t Position = 0x11C;
         inline constexpr uintptr_t Rotation = 0xF8;
-    }
-}
+    } // namespace Camera
+} // namespace offsets
