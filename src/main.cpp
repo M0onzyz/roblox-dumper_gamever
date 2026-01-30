@@ -1,66 +1,59 @@
-#include "control/control_server.hpp"
-#include "memory/memory.h"
-#include "scanner/scanner.hpp"
-#include "utils/config.hpp"
-#include "utils/file_utils.hpp"
-#include "utils/logger.hpp"
-#include "utils/offset_registry.hpp"
-#include <regex>
+#include "config.h"
+#include "control/control.h"
+#include "dumper/dumper.h"
+#include "writer/writer.h"
+#include <Windows.h>
+#include <chrono>
+#include <format>
+#include <iostream>
+#include <logger/logger.h>
+#include <process/process.h>
+#include <spdlog/spdlog.h>
 
-int main() {
-    if (!config::init()) {
-        LOG_ERR("Failed to init config");
-        std::cin.get();
+auto main() -> int {
+    logger::initialize();
+
+    const auto title = std::format("{} {}", PROJECT_NAME, PROJECT_VERSION);
+
+    spdlog::info("{} created by jonah/nopjo", title);
+    spdlog::info("Github: https://github.com/nopjo/roblox-dumper\n");
+
+    if (!process::g_process.attach("RobloxPlayerBeta.exe")) {
+        MessageBoxA(
+            nullptr,
+            "Failed to attach to Roblox, please rerun the Dumper when Roblox has fully loaded.",
+            title.c_str(), MB_OK | MB_ICONERROR);
         return 1;
     }
 
-    memory = std::make_unique<Memory>("RobloxPlayerBeta.exe");
+    spdlog::info("Attached to Roblox. PID: {}\n", process::g_process.get_pid());
 
-    if (!memory->process_handle) {
-        LOG_ERR("Failed to attach to Roblox");
-        std::cin.get();
+    if (!control::g_control.start(8080)) {
+        MessageBoxA(nullptr,
+                    "Failed to start control server, make sure you have no applications running on "
+                    "port 8080.",
+                    title.c_str(), MB_OK | MB_ICONERROR);
         return 1;
     }
 
-    LOG_SUCCESS("Attached to Roblox, PID: {}", memory->process_id);
+    spdlog::info("Control server started on port 8080\n");
 
-    control::ControlServer server(8000);
-    server.start();
+    const auto start_time = std::chrono::steady_clock::now();
+    dumper::g_dumper.start();
 
-    if (!server.is_running()) {
-        LOG_ERR("Failed to start control server");
-        std::cin.get();
-        return 1;
-    }
+    const auto end_time = std::chrono::steady_clock::now();
+    const auto elapsed =
+        std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
 
-    if (!scanner::run_all_phases()) {
-        LOG_ERR("Dumping failed");
-        std::cin.get();
-        return 1;
-    }
+    spdlog::info("Finished in {} ms ({:.2f} seconds)", elapsed.count(), elapsed.count() / 1000.0);
 
-    LOG_INFO("Dumping complete");
+    // will eventually have a config to choose what file types to dump
+    dumper::writer::g_header_writer.write("offsets", elapsed);
+    dumper::writer::g_json_writer.write("offsets", elapsed);
+    dumper::writer::g_python_writer.write("offsets", elapsed);
+    dumper::writer::g_csharp_writer.write("offsets", elapsed);
 
-    std::string exe_path = memory->get_executable_path();
-    if (!exe_path.empty()) {
-        std::regex version_regex(R"(version-([a-f0-9]+))");
-        std::smatch match;
-        if (std::regex_search(exe_path, match, version_regex)) {
-            std::string version = "version-" + match[1].str();
-            offset_registry.set_roblox_version(version);
-        }
-    }
+    logger::print_error_summary();
 
-    std::string output_path = file_utils::get_exe_directory() + "\\offsets.hpp";
-    std::string output_json_path = file_utils::get_exe_directory() + "\\offsets.json";
-
-    offset_registry.write_to_file(output_path);
-    offset_registry.write_to_json(output_json_path);
-
-    LOG_SUCCESS("Dumping Complete");
-    LOG_SUCCESS("[C++] Offsets saved to: {}", output_path);
-    LOG_SUCCESS("[JSON] Offsets saved to: {}", output_json_path);
-
-    std::cin.get();
     return 0;
 }
