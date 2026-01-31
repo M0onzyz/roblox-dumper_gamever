@@ -2,7 +2,7 @@
  * Dumped With: roblox-dumper 2.0
  * Created by: Jonah (jonahw on Discord)
  * Github: https://github.com/nopjo/roblox-dumper
- * Time Taken: 3441 ms (3.441000 seconds)
+ * Time Taken: 3758 ms (3.758000 seconds)
  * Total Offsets: 204
  */
 
@@ -64,7 +64,7 @@ namespace offsets {
     }
 
     namespace FakeDataModel {
-        inline constexpr uintptr_t Pointer = 0x6C14ED8;
+        inline constexpr uintptr_t Pointer = 0x8014E88;
         inline constexpr uintptr_t RealDataModel = 0x1C0;
     }
 
@@ -293,7 +293,7 @@ namespace offsets {
     namespace VisualEngine {
         inline constexpr uintptr_t Dimensions = 0x720;
         inline constexpr uintptr_t FakeDataModel = 0x700;
-        inline constexpr uintptr_t Pointer = 0x7AED020;
+        inline constexpr uintptr_t Pointer = 0x7AF2720;
         inline constexpr uintptr_t RenderView = 0x800;
         inline constexpr uintptr_t ViewMatrix = 0x120;
     }

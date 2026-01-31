@@ -1,7 +1,7 @@
 # Dumped With: roblox-dumper 2.0
 # Created by: Jonah (jonahw on Discord)
 # Github: https://github.com/nopjo/roblox-dumper
-# Time Taken: 3441 ms (3.441000 seconds)
+# Time Taken: 3758 ms (3.758000 seconds)
 # Total Offsets: 204
 
 class Offsets:
@@ -52,7 +52,7 @@ class Offsets:
         Workspace = 376
 
     class FakeDataModel:
-        Pointer = 113331928
+        Pointer = 134303368
         RealDataModel = 448
 
     class GuiBase2D:
@@ -259,7 +259,7 @@ class Offsets:
     class VisualEngine:
         Dimensions = 1824
         FakeDataModel = 1792
-        Pointer = 128897056
+        Pointer = 128919328
         RenderView = 2048
         ViewMatrix = 288
 

@@ -53,7 +53,7 @@
       "Workspace": 376
     },
     "FakeDataModel": {
-      "Pointer": 113331928,
+      "Pointer": 134303368,
       "RealDataModel": 448
     },
     "GuiBase2D": {
@@ -260,7 +260,7 @@
     "VisualEngine": {
       "Dimensions": 1824,
       "FakeDataModel": 1792,
-      "Pointer": 128897056,
+      "Pointer": 128919328,
       "RenderView": 2048,
       "ViewMatrix": 288
     },

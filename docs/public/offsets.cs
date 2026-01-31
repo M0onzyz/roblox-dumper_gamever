@@ -2,7 +2,7 @@
  * Dumped With: roblox-dumper 2.0
  * Created by: Jonah (jonahw on Discord)
  * Github: https://github.com/nopjo/roblox-dumper
- * Time Taken: 3441 ms (3.441000 seconds)
+ * Time Taken: 3758 ms (3.758000 seconds)
  * Total Offsets: 204
  */
 
@@ -70,7 +70,7 @@ namespace RobloxOffsets
 
     public static class FakeDataModel
     {
-        public const ulong Pointer = 0x6C14ED8;
+        public const ulong Pointer = 0x8014E88;
         public const ulong RealDataModel = 0x1C0;
     }
 
@@ -321,7 +321,7 @@ namespace RobloxOffsets
     {
         public const ulong Dimensions = 0x720;
         public const ulong FakeDataModel = 0x700;
-        public const ulong Pointer = 0x7AED020;
+        public const ulong Pointer = 0x7AF2720;
         public const ulong RenderView = 0x800;
         public const ulong ViewMatrix = 0x120;
     }
