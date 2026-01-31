@@ -10,9 +10,11 @@ namespace process::helpers {
                               const std::vector<std::string>& class_names, size_t alignment)
         -> std::unordered_map<std::string, std::optional<size_t>> {
         std::unordered_map<std::string, std::optional<size_t>> results;
+        std::unordered_map<std::string, std::vector<uintptr_t>> all_matches;
 
         for (const auto& class_name : class_names) {
             results[class_name] = std::nullopt;
+            all_matches[class_name] = {};
         }
 
         auto section = process::g_process.get_section(section_name);
@@ -36,22 +38,32 @@ namespace process::helpers {
             }
 
             for (const auto& class_name : class_names) {
-                if (rtti->name == class_name && !results[class_name]) {
+                if (rtti->name == class_name) {
                     size_t final_offset = (section_start + offset) - module_base;
-                    results[class_name] = final_offset;
+                    all_matches[class_name].push_back(final_offset);
                 }
-            }
-
-            bool all_found = std::all_of(results.begin(), results.end(),
-                                         [](const auto& pair) { return pair.second.has_value(); });
-            if (all_found) {
-                break;
             }
         }
 
-        for (const auto& [class_name, offset] : results) {
-            if (!offset) {
+        for (const auto& class_name : class_names) {
+            auto& matches = all_matches[class_name];
+
+            if (matches.empty()) {
                 spdlog::warn("Failed to find class: {}", class_name);
+                continue;
+            }
+
+            if (class_name == "DataModel@RBX") {
+                std::sort(matches.begin(), matches.end(),
+                          [](uintptr_t a, uintptr_t b) { return a > b; });
+
+                if (matches.size() >= 2) {
+                    results[class_name] = matches[1];
+                } else {
+                    spdlog::warn("Found DataModel but not enough instances");
+                }
+            } else {
+                results[class_name] = matches[0];
             }
         }
 
