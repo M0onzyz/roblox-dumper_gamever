@@ -21,6 +21,8 @@ namespace control::client {
         auto get_character_mesh_properties() -> std::optional<CharacterMeshPropertiesInfo>;
         auto get_tool_properties() -> std::optional<ToolPropertiesInfo>;
         auto get_proximity_prompt_properties() -> std::optional<ProximityPromptPropertiesInfo>;
+        auto get_textlabel_properties() -> std::optional<TextLabelPropertiesInfo>;
+        auto get_textbutton_properties() -> std::optional<TextButtonPropertiesInfo>;
 
       private:
         template <typename T> auto execute(const std::string& action) -> std::optional<T>;

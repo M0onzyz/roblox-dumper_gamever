@@ -1,10 +1,13 @@
-# Dumped With: roblox-dumper 2.0
+# Dumped With: roblox-dumper 2.1
 # Created by: Jonah (jonahw on Discord)
 # Github: https://github.com/nopjo/roblox-dumper
-# Time Taken: 3758 ms (3.758000 seconds)
-# Total Offsets: 204
+# Roblox Version: version-db4634f0e27d4d36
+# Time Taken: 4093 ms (4.093000 seconds)
+# Total Offsets: 247
 
 class Offsets:
+    ROBLOX_VERSION = "version-db4634f0e27d4d36"
+
     class Atmosphere:
         Color = 208
         Decay = 220
@@ -131,7 +134,7 @@ class Offsets:
         ClockTime = 440
         ColorShift_Bottom = 228
         ColorShift_Top = 240
-        EnvironmentDefuseScale = 292
+        EnvironmentDiffuseScale = 292
         EnvironmentSpecularScale = 296
         GeographicLatitude = 400
         OutdoorAmbient = 264
@@ -240,6 +243,53 @@ class Offsets:
         WaterTransparency = 516
         WaterWaveSize = 520
         WaterWaveSpeed = 524
+
+    class TextButton:
+        AutoButtonColor = 2580
+        ContentText = 3368
+        Font = 4432
+        LineHeight = 3484
+        LocalizedText = 3368
+        MaxVisibleGraphemes = 4444
+        Modal = 2581
+        RichText = 3653
+        Selected = 2582
+        Text = 3368
+        TextBounds = 3936
+        TextColor3 = 4408
+        TextDirection = 3656
+        TextFits = 48
+        TextScaled = 3480
+        TextSize = 4452
+        TextStrokeColor3 = 4420
+        TextStrokeTransparency = 4456
+        TextTransparency = 4460
+        TextTruncate = 4464
+        TextWrapped = 3560
+        TextXAlignment = 4468
+        TextYAlignment = 3556
+
+    class TextLabel:
+        ContentText = 2728
+        Font = 3792
+        LineHeight = 2844
+        LocalizedText = 2728
+        MaxVisibleGraphemes = 3804
+        RichText = 3013
+        Text = 2728
+        TextBounds = 3296
+        TextColor3 = 3768
+        TextDirection = 3016
+        TextFits = 3838
+        TextScaled = 2840
+        TextSize = 3812
+        TextStrokeColor3 = 3780
+        TextStrokeTransparency = 3816
+        TextTransparency = 3820
+        TextTruncate = 3824
+        TextWrapped = 2920
+        TextXAlignment = 3828
+        TextYAlignment = 2916
 
     class Tool:
         CanBeDropped = 1184

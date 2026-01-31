@@ -1,9 +1,10 @@
 /*
- * Dumped With: roblox-dumper 2.0
+ * Dumped With: roblox-dumper 2.1
  * Created by: Jonah (jonahw on Discord)
  * Github: https://github.com/nopjo/roblox-dumper
- * Time Taken: 3758 ms (3.758000 seconds)
- * Total Offsets: 204
+ * Roblox Version: version-db4634f0e27d4d36
+ * Time Taken: 4093 ms (4.093000 seconds)
+ * Total Offsets: 247
  */
 
 #pragma once
@@ -11,6 +12,8 @@
 
 // clang-format off
 namespace offsets {
+    inline constexpr const char* roblox_version = "version-db4634f0e27d4d36";
+
     namespace Atmosphere {
         inline constexpr uintptr_t Color = 0xD0;
         inline constexpr uintptr_t Decay = 0xDC;
@@ -149,7 +152,7 @@ namespace offsets {
         inline constexpr uintptr_t ClockTime = 0x1B8;
         inline constexpr uintptr_t ColorShift_Bottom = 0xE4;
         inline constexpr uintptr_t ColorShift_Top = 0xF0;
-        inline constexpr uintptr_t EnvironmentDefuseScale = 0x124;
+        inline constexpr uintptr_t EnvironmentDiffuseScale = 0x124;
         inline constexpr uintptr_t EnvironmentSpecularScale = 0x128;
         inline constexpr uintptr_t GeographicLatitude = 0x190;
         inline constexpr uintptr_t OutdoorAmbient = 0x108;
@@ -271,6 +274,55 @@ namespace offsets {
         inline constexpr uintptr_t WaterTransparency = 0x204;
         inline constexpr uintptr_t WaterWaveSize = 0x208;
         inline constexpr uintptr_t WaterWaveSpeed = 0x20C;
+    }
+
+    namespace TextButton {
+        inline constexpr uintptr_t AutoButtonColor = 0xA14;
+        inline constexpr uintptr_t ContentText = 0xD28;
+        inline constexpr uintptr_t Font = 0x1150;
+        inline constexpr uintptr_t LineHeight = 0xD9C;
+        inline constexpr uintptr_t LocalizedText = 0xD28;
+        inline constexpr uintptr_t MaxVisibleGraphemes = 0x115C;
+        inline constexpr uintptr_t Modal = 0xA15;
+        inline constexpr uintptr_t RichText = 0xE45;
+        inline constexpr uintptr_t Selected = 0xA16;
+        inline constexpr uintptr_t Text = 0xD28;
+        inline constexpr uintptr_t TextBounds = 0xF60;
+        inline constexpr uintptr_t TextColor3 = 0x1138;
+        inline constexpr uintptr_t TextDirection = 0xE48;
+        inline constexpr uintptr_t TextFits = 0x30;
+        inline constexpr uintptr_t TextScaled = 0xD98;
+        inline constexpr uintptr_t TextSize = 0x1164;
+        inline constexpr uintptr_t TextStrokeColor3 = 0x1144;
+        inline constexpr uintptr_t TextStrokeTransparency = 0x1168;
+        inline constexpr uintptr_t TextTransparency = 0x116C;
+        inline constexpr uintptr_t TextTruncate = 0x1170;
+        inline constexpr uintptr_t TextWrapped = 0xDE8;
+        inline constexpr uintptr_t TextXAlignment = 0x1174;
+        inline constexpr uintptr_t TextYAlignment = 0xDE4;
+    }
+
+    namespace TextLabel {
+        inline constexpr uintptr_t ContentText = 0xAA8;
+        inline constexpr uintptr_t Font = 0xED0;
+        inline constexpr uintptr_t LineHeight = 0xB1C;
+        inline constexpr uintptr_t LocalizedText = 0xAA8;
+        inline constexpr uintptr_t MaxVisibleGraphemes = 0xEDC;
+        inline constexpr uintptr_t RichText = 0xBC5;
+        inline constexpr uintptr_t Text = 0xAA8;
+        inline constexpr uintptr_t TextBounds = 0xCE0;
+        inline constexpr uintptr_t TextColor3 = 0xEB8;
+        inline constexpr uintptr_t TextDirection = 0xBC8;
+        inline constexpr uintptr_t TextFits = 0xEFE;
+        inline constexpr uintptr_t TextScaled = 0xB18;
+        inline constexpr uintptr_t TextSize = 0xEE4;
+        inline constexpr uintptr_t TextStrokeColor3 = 0xEC4;
+        inline constexpr uintptr_t TextStrokeTransparency = 0xEE8;
+        inline constexpr uintptr_t TextTransparency = 0xEEC;
+        inline constexpr uintptr_t TextTruncate = 0xEF0;
+        inline constexpr uintptr_t TextWrapped = 0xB68;
+        inline constexpr uintptr_t TextXAlignment = 0xEF4;
+        inline constexpr uintptr_t TextYAlignment = 0xB64;
     }
 
     namespace Tool {

@@ -1,5 +1,6 @@
 #include "process.h"
 #include "process/memory/memory.h"
+#include <regex>
 
 namespace process {
     NtDll::NtDll() : m_module(GetModuleHandleA("ntdll.dll")) {}
@@ -148,6 +149,36 @@ namespace process {
         }
 
         return glm::vec2(width, height);
+    }
+
+    auto Process::get_version() const -> std::optional<std::string> {
+        if (!m_pid) {
+            return std::nullopt;
+        }
+
+        HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, m_pid);
+        if (snapshot == INVALID_HANDLE_VALUE) {
+            return std::nullopt;
+        }
+
+        MODULEENTRY32W me = {sizeof(MODULEENTRY32W)};
+        if (Module32FirstW(snapshot, &me)) {
+            std::wstring path(me.szExePath);
+            CloseHandle(snapshot);
+
+            std::string narrow_path(path.begin(), path.end());
+
+            std::regex version_regex(R"(version-[a-f0-9]{16})");
+            std::smatch match;
+
+            if (std::regex_search(narrow_path, match, version_regex)) {
+                return match.str();
+            }
+        } else {
+            CloseHandle(snapshot);
+        }
+
+        return std::nullopt;
     }
 
     auto Process::nt_open_process(DWORD pid) -> HANDLE {

@@ -32,7 +32,7 @@ namespace dumper::stages::lighting {
                             32400000000, 0x400, 0x8);
 
         FIND_AND_ADD_OFFSET(dumper::g_lighting->get_address(), Lighting, float,
-                            EnvironmentDefuseScale, 0.678, 0x400, 0x4);
+                            EnvironmentDiffuseScale, 0.678, 0x400, 0x4);
 
         FIND_AND_ADD_OFFSET(dumper::g_lighting->get_address(), Lighting, float,
                             EnvironmentSpecularScale, 0.762, 0x400, 0x4);

@@ -181,6 +181,71 @@ namespace control::client {
         std::vector<ProximityPromptProperty> prompts;
     };
 
+    struct TextLabelProperty {
+        std::string name;
+        std::string content_text;
+        uint32_t font;
+        uint32_t font_size;
+        float line_height;
+        std::string localized_text;
+        int32_t max_visible_graphemes;
+        std::string open_type_features;
+        std::string open_type_features_error;
+        bool rich_text;
+        std::string text;
+        float text_bounds_x, text_bounds_y;
+        uint8_t text_color_r, text_color_g, text_color_b;
+        uint8_t text_direction;
+        bool text_fits;
+        bool text_scaled;
+        float text_size;
+        uint8_t text_stroke_color_r, text_stroke_color_g, text_stroke_color_b;
+        float text_stroke_transparency;
+        float text_transparency;
+        uint8_t text_truncate;
+        bool text_wrapped;
+        uint8_t text_x_alignment;
+        uint8_t text_y_alignment;
+    };
+
+    struct TextLabelPropertiesInfo {
+        std::vector<TextLabelProperty> text_labels;
+    };
+
+    struct TextButtonProperty {
+        std::string name;
+        std::string content_text;
+        uint32_t font;
+        uint32_t font_size;
+        float line_height;
+        std::string localized_text;
+        int32_t max_visible_graphemes;
+        std::string open_type_features;
+        std::string open_type_features_error;
+        bool rich_text;
+        std::string text;
+        float text_bounds_x, text_bounds_y;
+        uint8_t text_color_r, text_color_g, text_color_b;
+        uint8_t text_direction;
+        bool text_fits;
+        bool text_scaled;
+        float text_size;
+        uint8_t text_stroke_color_r, text_stroke_color_g, text_stroke_color_b;
+        float text_stroke_transparency;
+        float text_transparency;
+        uint8_t text_truncate;
+        bool text_wrapped;
+        uint8_t text_x_alignment;
+        uint8_t text_y_alignment;
+        bool auto_button_color;
+        bool modal;
+        bool selected;
+    };
+
+    struct TextButtonPropertiesInfo {
+        std::vector<TextButtonProperty> text_buttons;
+    };
+
     NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(DataModelInfo, place_id, game_id, creator_id, job_id)
     NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(WorkspaceInfo, children_count, gravity)
     NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(PlayerInfo, user_id, account_age, display_name, locale_id)
@@ -228,5 +293,23 @@ namespace control::client {
                                        keyboard_key_code, hold_duration, max_activation_distance,
                                        max_indicator_distance, style, ui_offset_x, ui_offset_y)
     NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ProximityPromptPropertiesInfo, prompts)
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TextLabelProperty, name, content_text, font, font_size,
+                                       line_height, localized_text, max_visible_graphemes,
+                                       open_type_features, open_type_features_error, rich_text,
+                                       text, text_bounds_x, text_bounds_y, text_color_r,
+                                       text_color_g, text_color_b, text_direction, text_fits,
+                                       text_scaled, text_size, text_stroke_color_r,
+                                       text_stroke_color_g, text_stroke_color_b,
+                                       text_stroke_transparency, text_transparency, text_truncate,
+                                       text_wrapped, text_x_alignment, text_y_alignment)
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TextLabelPropertiesInfo, text_labels)
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(
+        TextButtonProperty, name, content_text, font, font_size, line_height, localized_text,
+        max_visible_graphemes, open_type_features, open_type_features_error, rich_text, text,
+        text_bounds_x, text_bounds_y, text_color_r, text_color_g, text_color_b, text_direction,
+        text_fits, text_scaled, text_size, text_stroke_color_r, text_stroke_color_g,
+        text_stroke_color_b, text_stroke_transparency, text_transparency, text_truncate,
+        text_wrapped, text_x_alignment, text_y_alignment, auto_button_color, modal, selected)
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TextButtonPropertiesInfo, text_buttons)
 
 } // namespace control::client

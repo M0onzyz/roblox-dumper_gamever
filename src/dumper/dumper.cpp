@@ -19,6 +19,8 @@
 #include "stages/special_mesh/special_mesh.h"
 #include "stages/team/team.h"
 #include "stages/terrain/terrain.h"
+#include "stages/text_button/text_button.h"
+#include "stages/text_label/text_label.h"
 #include "stages/tool/tool.h"
 #include "stages/value/value.h"
 #include "stages/visual_engine/visual_engine.h"
@@ -79,6 +81,8 @@ namespace dumper {
         threads.emplace_back([]() { stages::character_mesh::dump(); });
         threads.emplace_back([]() { stages::tool::dump(); });
         threads.emplace_back([]() { stages::proximity_prompt::dump(); });
+        threads.emplace_back([]() { stages::text_label::dump(); });
+        threads.emplace_back([]() { stages::text_button::dump(); });
 
         for (auto& thread : threads) {
             thread.join();

@@ -75,4 +75,12 @@ namespace control::client {
         return execute<ProximityPromptPropertiesInfo>("get_proximity_prompt_properties");
     }
 
+    auto Client::get_textlabel_properties() -> std::optional<TextLabelPropertiesInfo> {
+        return execute<TextLabelPropertiesInfo>("get_textlabel_properties");
+    }
+
+    auto Client::get_textbutton_properties() -> std::optional<TextButtonPropertiesInfo> {
+        return execute<TextButtonPropertiesInfo>("get_textbutton_properties");
+    }
+
 } // namespace control::client

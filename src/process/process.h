@@ -45,6 +45,7 @@ namespace process {
         auto get_section(std::string_view section_name) const
             -> std::optional<std::pair<uintptr_t, size_t>>;
         auto get_window_dimensions() const -> std::optional<glm::vec2>;
+        auto get_version() const -> std::optional<std::string>;
 
       public:
         NtDll m_ntdll;

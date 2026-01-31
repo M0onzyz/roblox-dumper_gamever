@@ -1,15 +1,21 @@
 /*
- * Dumped With: roblox-dumper 2.0
+ * Dumped With: roblox-dumper 2.1
  * Created by: Jonah (jonahw on Discord)
  * Github: https://github.com/nopjo/roblox-dumper
- * Time Taken: 3758 ms (3.758000 seconds)
- * Total Offsets: 204
+ * Roblox Version: version-db4634f0e27d4d36
+ * Time Taken: 4093 ms (4.093000 seconds)
+ * Total Offsets: 247
  */
 
 using System;
 
 namespace RobloxOffsets
 {
+    public static class Metadata
+    {
+        public const string RobloxVersion = "version-db4634f0e27d4d36";
+    }
+
     public static class Atmosphere
     {
         public const ulong Color = 0xD0;
@@ -161,7 +167,7 @@ namespace RobloxOffsets
         public const ulong ClockTime = 0x1B8;
         public const ulong ColorShift_Bottom = 0xE4;
         public const ulong ColorShift_Top = 0xF0;
-        public const ulong EnvironmentDefuseScale = 0x124;
+        public const ulong EnvironmentDiffuseScale = 0x124;
         public const ulong EnvironmentSpecularScale = 0x128;
         public const ulong GeographicLatitude = 0x190;
         public const ulong OutdoorAmbient = 0x108;
@@ -296,6 +302,57 @@ namespace RobloxOffsets
         public const ulong WaterTransparency = 0x204;
         public const ulong WaterWaveSize = 0x208;
         public const ulong WaterWaveSpeed = 0x20C;
+    }
+
+    public static class TextButton
+    {
+        public const ulong AutoButtonColor = 0xA14;
+        public const ulong ContentText = 0xD28;
+        public const ulong Font = 0x1150;
+        public const ulong LineHeight = 0xD9C;
+        public const ulong LocalizedText = 0xD28;
+        public const ulong MaxVisibleGraphemes = 0x115C;
+        public const ulong Modal = 0xA15;
+        public const ulong RichText = 0xE45;
+        public const ulong Selected = 0xA16;
+        public const ulong Text = 0xD28;
+        public const ulong TextBounds = 0xF60;
+        public const ulong TextColor3 = 0x1138;
+        public const ulong TextDirection = 0xE48;
+        public const ulong TextFits = 0x30;
+        public const ulong TextScaled = 0xD98;
+        public const ulong TextSize = 0x1164;
+        public const ulong TextStrokeColor3 = 0x1144;
+        public const ulong TextStrokeTransparency = 0x1168;
+        public const ulong TextTransparency = 0x116C;
+        public const ulong TextTruncate = 0x1170;
+        public const ulong TextWrapped = 0xDE8;
+        public const ulong TextXAlignment = 0x1174;
+        public const ulong TextYAlignment = 0xDE4;
+    }
+
+    public static class TextLabel
+    {
+        public const ulong ContentText = 0xAA8;
+        public const ulong Font = 0xED0;
+        public const ulong LineHeight = 0xB1C;
+        public const ulong LocalizedText = 0xAA8;
+        public const ulong MaxVisibleGraphemes = 0xEDC;
+        public const ulong RichText = 0xBC5;
+        public const ulong Text = 0xAA8;
+        public const ulong TextBounds = 0xCE0;
+        public const ulong TextColor3 = 0xEB8;
+        public const ulong TextDirection = 0xBC8;
+        public const ulong TextFits = 0xEFE;
+        public const ulong TextScaled = 0xB18;
+        public const ulong TextSize = 0xEE4;
+        public const ulong TextStrokeColor3 = 0xEC4;
+        public const ulong TextStrokeTransparency = 0xEE8;
+        public const ulong TextTransparency = 0xEEC;
+        public const ulong TextTruncate = 0xEF0;
+        public const ulong TextWrapped = 0xB68;
+        public const ulong TextXAlignment = 0xEF4;
+        public const ulong TextYAlignment = 0xB64;
     }
 
     public static class Tool

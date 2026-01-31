@@ -1,6 +1,7 @@
 #include "writer.h"
 #include "config.h"
 #include "dumper/dumper.h"
+#include "process/process.h"
 #include <algorithm>
 #include <filesystem>
 #include <format>
@@ -46,11 +47,15 @@ namespace dumper::writer {
     }
 
     auto IWriter::generate_header_comment(std::chrono::milliseconds elapsed_time) -> std::string {
+        const auto version = process::g_process.get_version();
+        std::string version_str = version ? *version : "unknown";
+
         std::string comment = "/*\n";
         comment += " * Dumped With: " + std::string(PROJECT_NAME) + " " +
                    std::string(PROJECT_VERSION) + "\n";
         comment += " * Created by: Jonah (jonahw on Discord)\n";
         comment += " * Github: https://github.com/nopjo/roblox-dumper\n";
+        comment += " * Roblox Version: " + version_str + "\n";
         comment += " * Time Taken: " + std::to_string(elapsed_time.count()) + " ms (" +
                    std::to_string(elapsed_time.count() / 1000.0) + " seconds)\n";
         comment += " * Total Offsets: " + std::to_string(get_total_offset_count()) + "\n";
@@ -85,10 +90,14 @@ namespace dumper::writer {
     }
 
     auto HeaderWriter::generate_content() -> std::string {
+        auto version = process::g_process.get_version();
+        std::string version_str = version ? *version : "unknown";
+
         std::string content = "#pragma once\n";
         content += "#include <cstdint>\n\n";
         content += "// clang-format off\n";
         content += "namespace offsets {\n";
+        content += "    inline constexpr const char* roblox_version = \"" + version_str + "\";\n\n";
 
         for (const auto& [namespace_name, entries] : get_sorted_namespaces()) {
             if (entries.empty()) {
@@ -115,12 +124,16 @@ namespace dumper::writer {
     }
 
     auto JsonWriter::generate_content() -> std::string {
+        auto version = process::g_process.get_version();
+        std::string version_str = version ? *version : "unknown";
+
         std::string content = "{\n";
         content += "  \"metadata\": {\n";
         content += "    \"dumper\": \"" + std::string(PROJECT_NAME) + " " +
                    std::string(PROJECT_VERSION) + "\",\n";
         content += "    \"author\": \"Jonah (jonahw on Discord)\",\n";
         content += "    \"github\": \"https://github.com/nopjo/roblox-dumper\",\n";
+        content += "    \"roblox_version\": \"" + version_str + "\",\n";
         content += "    \"total_offsets\": " + std::to_string(get_total_offset_count()) + "\n";
         content += "  },\n";
         content += "  \"offsets\": {\n";
@@ -156,8 +169,12 @@ namespace dumper::writer {
     }
 
     auto PythonWriter::generate_content() -> std::string {
+        auto version = process::g_process.get_version();
+        std::string version_str = version ? *version : "unknown";
+
         std::string content = "";
         content += "class Offsets:\n";
+        content += "    ROBLOX_VERSION = \"" + version_str + "\"\n\n";
 
         for (const auto& [namespace_name, entries] : get_sorted_namespaces()) {
             if (entries.empty()) {
@@ -178,10 +195,14 @@ namespace dumper::writer {
 
     auto PythonWriter::generate_header_comment(std::chrono::milliseconds elapsed_time)
         -> std::string {
+        auto version = process::g_process.get_version();
+        std::string version_str = version ? *version : "unknown";
+
         std::string comment = "# Dumped With: " + std::string(PROJECT_NAME) + " " +
                               std::string(PROJECT_VERSION) + "\n";
         comment += "# Created by: Jonah (jonahw on Discord)\n";
         comment += "# Github: https://github.com/nopjo/roblox-dumper\n";
+        comment += "# Roblox Version: " + version_str + "\n";
         comment += "# Time Taken: " + std::to_string(elapsed_time.count()) + " ms (" +
                    std::to_string(elapsed_time.count() / 1000.0) + " seconds)\n";
         comment += "# Total Offsets: " + std::to_string(get_total_offset_count()) + "\n\n";
@@ -189,8 +210,14 @@ namespace dumper::writer {
     }
 
     auto CSharpWriter::generate_content() -> std::string {
+        auto version = process::g_process.get_version();
+        std::string version_str = version ? *version : "unknown";
+
         std::string content = "using System;\n\n";
         content += "namespace RobloxOffsets\n{\n";
+        content += "    public static class Metadata\n    {\n";
+        content += "        public const string RobloxVersion = \"" + version_str + "\";\n";
+        content += "    }\n\n";
 
         for (const auto& [namespace_name, entries] : get_sorted_namespaces()) {
             if (entries.empty()) {
