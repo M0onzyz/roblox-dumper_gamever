@@ -2,8 +2,8 @@
 # Created by: Jonah (jonahw on Discord)
 # Github: https://github.com/nopjo/roblox-dumper
 # Roblox Version: version-db4634f0e27d4d36
-# Time Taken: 4093 ms (4.093000 seconds)
-# Total Offsets: 247
+# Time Taken: 4255 ms (4.255000 seconds)
+# Total Offsets: 252
 
 class Offsets:
     ROBLOX_VERSION = "version-db4634f0e27d4d36"
@@ -30,6 +30,10 @@ class Offsets:
         Intensity = 208
         Size = 212
         Threshold = 216
+
+    class ByteCode:
+        Pointer = 16
+        Size = 32
 
     class Camera:
         CFrame = 248
@@ -140,6 +144,10 @@ class Offsets:
         OutdoorAmbient = 264
         Sky = 472
 
+    class LocalScript:
+        Bytecode = 424
+        Hash = 232
+
     class MaterialColors:
         Asphalt = 48
         Basalt = 39
@@ -166,6 +174,10 @@ class Offsets:
     class MeshPart:
         MeshId = 744
         TextureId = 792
+
+    class ModuleScript:
+        Bytecode = 336
+        Hash = 352
 
     class MouseService:
         InputObject = 272
@@ -211,6 +223,7 @@ class Offsets:
 
     class RenderView:
         LightingValid = 328
+        SkyboxValid = 653
 
     class Sky:
         MoonAngularSize = 604
@@ -255,11 +268,10 @@ class Offsets:
         RichText = 3653
         Selected = 2582
         Text = 3368
-        TextBounds = 3936
         TextColor3 = 4408
         TextDirection = 3656
         TextFits = 48
-        TextScaled = 3480
+        TextScaled = 2345
         TextSize = 4452
         TextStrokeColor3 = 4420
         TextStrokeTransparency = 4456
@@ -277,10 +289,9 @@ class Offsets:
         MaxVisibleGraphemes = 3804
         RichText = 3013
         Text = 2728
-        TextBounds = 3296
         TextColor3 = 3768
         TextDirection = 3016
-        TextFits = 3838
+        TextFits = 3285
         TextScaled = 2840
         TextSize = 3812
         TextStrokeColor3 = 3780

@@ -3,8 +3,8 @@
  * Created by: Jonah (jonahw on Discord)
  * Github: https://github.com/nopjo/roblox-dumper
  * Roblox Version: version-db4634f0e27d4d36
- * Time Taken: 4093 ms (4.093000 seconds)
- * Total Offsets: 247
+ * Time Taken: 4255 ms (4.255000 seconds)
+ * Total Offsets: 252
  */
 
 using System;
@@ -43,6 +43,12 @@ namespace RobloxOffsets
         public const ulong Intensity = 0xD0;
         public const ulong Size = 0xD4;
         public const ulong Threshold = 0xD8;
+    }
+
+    public static class ByteCode
+    {
+        public const ulong Pointer = 0x10;
+        public const ulong Size = 0x20;
     }
 
     public static class Camera
@@ -174,6 +180,12 @@ namespace RobloxOffsets
         public const ulong Sky = 0x1D8;
     }
 
+    public static class LocalScript
+    {
+        public const ulong Bytecode = 0x1A8;
+        public const ulong Hash = 0xE8;
+    }
+
     public static class MaterialColors
     {
         public const ulong Asphalt = 0x30;
@@ -203,6 +215,12 @@ namespace RobloxOffsets
     {
         public const ulong MeshId = 0x2E8;
         public const ulong TextureId = 0x318;
+    }
+
+    public static class ModuleScript
+    {
+        public const ulong Bytecode = 0x150;
+        public const ulong Hash = 0x160;
     }
 
     public static class MouseService
@@ -262,6 +280,7 @@ namespace RobloxOffsets
     public static class RenderView
     {
         public const ulong LightingValid = 0x148;
+        public const ulong SkyboxValid = 0x28D;
     }
 
     public static class Sky
@@ -316,11 +335,10 @@ namespace RobloxOffsets
         public const ulong RichText = 0xE45;
         public const ulong Selected = 0xA16;
         public const ulong Text = 0xD28;
-        public const ulong TextBounds = 0xF60;
         public const ulong TextColor3 = 0x1138;
         public const ulong TextDirection = 0xE48;
         public const ulong TextFits = 0x30;
-        public const ulong TextScaled = 0xD98;
+        public const ulong TextScaled = 0x929;
         public const ulong TextSize = 0x1164;
         public const ulong TextStrokeColor3 = 0x1144;
         public const ulong TextStrokeTransparency = 0x1168;
@@ -340,10 +358,9 @@ namespace RobloxOffsets
         public const ulong MaxVisibleGraphemes = 0xEDC;
         public const ulong RichText = 0xBC5;
         public const ulong Text = 0xAA8;
-        public const ulong TextBounds = 0xCE0;
         public const ulong TextColor3 = 0xEB8;
         public const ulong TextDirection = 0xBC8;
-        public const ulong TextFits = 0xEFE;
+        public const ulong TextFits = 0xCD5;
         public const ulong TextScaled = 0xB18;
         public const ulong TextSize = 0xEE4;
         public const ulong TextStrokeColor3 = 0xEC4;

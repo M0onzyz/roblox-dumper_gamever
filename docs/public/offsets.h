@@ -3,8 +3,8 @@
  * Created by: Jonah (jonahw on Discord)
  * Github: https://github.com/nopjo/roblox-dumper
  * Roblox Version: version-db4634f0e27d4d36
- * Time Taken: 4093 ms (4.093000 seconds)
- * Total Offsets: 247
+ * Time Taken: 4255 ms (4.255000 seconds)
+ * Total Offsets: 252
  */
 
 #pragma once
@@ -38,6 +38,11 @@ namespace offsets {
         inline constexpr uintptr_t Intensity = 0xD0;
         inline constexpr uintptr_t Size = 0xD4;
         inline constexpr uintptr_t Threshold = 0xD8;
+    }
+
+    namespace ByteCode {
+        inline constexpr uintptr_t Pointer = 0x10;
+        inline constexpr uintptr_t Size = 0x20;
     }
 
     namespace Camera {
@@ -159,6 +164,11 @@ namespace offsets {
         inline constexpr uintptr_t Sky = 0x1D8;
     }
 
+    namespace LocalScript {
+        inline constexpr uintptr_t Bytecode = 0x1A8;
+        inline constexpr uintptr_t Hash = 0xE8;
+    }
+
     namespace MaterialColors {
         inline constexpr uintptr_t Asphalt = 0x30;
         inline constexpr uintptr_t Basalt = 0x27;
@@ -186,6 +196,11 @@ namespace offsets {
     namespace MeshPart {
         inline constexpr uintptr_t MeshId = 0x2E8;
         inline constexpr uintptr_t TextureId = 0x318;
+    }
+
+    namespace ModuleScript {
+        inline constexpr uintptr_t Bytecode = 0x150;
+        inline constexpr uintptr_t Hash = 0x160;
     }
 
     namespace MouseService {
@@ -238,6 +253,7 @@ namespace offsets {
 
     namespace RenderView {
         inline constexpr uintptr_t LightingValid = 0x148;
+        inline constexpr uintptr_t SkyboxValid = 0x28D;
     }
 
     namespace Sky {
@@ -287,11 +303,10 @@ namespace offsets {
         inline constexpr uintptr_t RichText = 0xE45;
         inline constexpr uintptr_t Selected = 0xA16;
         inline constexpr uintptr_t Text = 0xD28;
-        inline constexpr uintptr_t TextBounds = 0xF60;
         inline constexpr uintptr_t TextColor3 = 0x1138;
         inline constexpr uintptr_t TextDirection = 0xE48;
         inline constexpr uintptr_t TextFits = 0x30;
-        inline constexpr uintptr_t TextScaled = 0xD98;
+        inline constexpr uintptr_t TextScaled = 0x929;
         inline constexpr uintptr_t TextSize = 0x1164;
         inline constexpr uintptr_t TextStrokeColor3 = 0x1144;
         inline constexpr uintptr_t TextStrokeTransparency = 0x1168;
@@ -310,10 +325,9 @@ namespace offsets {
         inline constexpr uintptr_t MaxVisibleGraphemes = 0xEDC;
         inline constexpr uintptr_t RichText = 0xBC5;
         inline constexpr uintptr_t Text = 0xAA8;
-        inline constexpr uintptr_t TextBounds = 0xCE0;
         inline constexpr uintptr_t TextColor3 = 0xEB8;
         inline constexpr uintptr_t TextDirection = 0xBC8;
-        inline constexpr uintptr_t TextFits = 0xEFE;
+        inline constexpr uintptr_t TextFits = 0xCD5;
         inline constexpr uintptr_t TextScaled = 0xB18;
         inline constexpr uintptr_t TextSize = 0xEE4;
         inline constexpr uintptr_t TextStrokeColor3 = 0xEC4;

@@ -4,7 +4,7 @@
     "author": "Jonah (jonahw on Discord)",
     "github": "https://github.com/nopjo/roblox-dumper",
     "roblox_version": "version-db4634f0e27d4d36",
-    "total_offsets": 247
+    "total_offsets": 252
   },
   "offsets": {
     "Atmosphere": {
@@ -29,6 +29,10 @@
       "Intensity": 208,
       "Size": 212,
       "Threshold": 216
+    },
+    "ByteCode": {
+      "Pointer": 16,
+      "Size": 32
     },
     "Camera": {
       "CFrame": 248,
@@ -139,6 +143,10 @@
       "OutdoorAmbient": 264,
       "Sky": 472
     },
+    "LocalScript": {
+      "Bytecode": 424,
+      "Hash": 232
+    },
     "MaterialColors": {
       "Asphalt": 48,
       "Basalt": 39,
@@ -165,6 +173,10 @@
     "MeshPart": {
       "MeshId": 744,
       "TextureId": 792
+    },
+    "ModuleScript": {
+      "Bytecode": 336,
+      "Hash": 352
     },
     "MouseService": {
       "InputObject": 272
@@ -209,7 +221,8 @@
       "RequiresLineOfSight": 343
     },
     "RenderView": {
-      "LightingValid": 328
+      "LightingValid": 328,
+      "SkyboxValid": 653
     },
     "Sky": {
       "MoonAngularSize": 604,
@@ -254,11 +267,10 @@
       "RichText": 3653,
       "Selected": 2582,
       "Text": 3368,
-      "TextBounds": 3936,
       "TextColor3": 4408,
       "TextDirection": 3656,
       "TextFits": 48,
-      "TextScaled": 3480,
+      "TextScaled": 2345,
       "TextSize": 4452,
       "TextStrokeColor3": 4420,
       "TextStrokeTransparency": 4456,
@@ -276,10 +288,9 @@
       "MaxVisibleGraphemes": 3804,
       "RichText": 3013,
       "Text": 2728,
-      "TextBounds": 3296,
       "TextColor3": 3768,
       "TextDirection": 3016,
-      "TextFits": 3838,
+      "TextFits": 3285,
       "TextScaled": 2840,
       "TextSize": 3812,
       "TextStrokeColor3": 3780,
