@@ -124,15 +124,6 @@ namespace dumper::stages::text_label {
         }
         dumper::g_dumper.add_offset("TextLabel", "TextDirection", *text_direction_offset);
 
-        const auto text_fits_offset = process::helpers::find_offset_with_getter<uint8_t>(
-            text_label_addrs, [&](size_t i) { return (*text_labels)[i].props.text_fits ? 1 : 0; },
-            0x1000, 0x1);
-        if (!text_fits_offset) {
-            spdlog::error("Failed to find TextFits offset");
-            return false;
-        }
-        dumper::g_dumper.add_offset("TextLabel", "TextFits", *text_fits_offset);
-
         const auto text_scaled_offset = process::helpers::find_offset_with_getter<uint8_t>(
             text_label_addrs, [&](size_t i) { return (*text_labels)[i].props.text_scaled ? 1 : 0; },
             0x1000, 0x1);

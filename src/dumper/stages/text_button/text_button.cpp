@@ -125,15 +125,6 @@ namespace dumper::stages::text_button {
         }
         dumper::g_dumper.add_offset("TextButton", "TextDirection", *text_direction_offset);
 
-        const auto text_fits_offset = process::helpers::find_offset_with_getter<uint8_t>(
-            text_button_addrs, [&](size_t i) { return (*text_buttons)[i].props.text_fits ? 1 : 0; },
-            0x1200, 0x1);
-        if (!text_fits_offset) {
-            spdlog::error("Failed to find TextFits offset");
-            return false;
-        }
-        dumper::g_dumper.add_offset("TextButton", "TextFits", *text_fits_offset);
-
         const auto text_scaled_offset = process::helpers::find_offset_with_getter<uint8_t>(
             text_button_addrs,
             [&](size_t i) { return (*text_buttons)[i].props.text_scaled ? 1 : 0; }, 0x1200, 0x1);
